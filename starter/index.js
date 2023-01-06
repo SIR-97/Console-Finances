@@ -86,3 +86,18 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+console.log("Financial Analysis") // Added heading for the my financial analysis //
+console.log("--------------------")
+
+console.log("Total Months: " + finances.length)  // Total numbers of months is equal to length of the array // 
+
+var net_Profit_or_Loss = 0; // I created a variable for the net profit or loss // 
+
+for (let i = 0; i < finances.length; i++){
+    net_Profit_or_Loss += finances[i][1]; // this function makes a sum of all the profit/losses per month //
+
+}
+
+console.log( "Total Net Profit/Loss: " + "£" + net_Profit_or_Loss) // console will dispplay total net profit or loss //
+
