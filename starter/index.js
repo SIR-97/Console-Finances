@@ -94,10 +94,32 @@ console.log("Total Months: " + finances.length)  // Total numbers of months is e
 
 var net_Profit_or_Loss = 0; // I created a variable for the net profit or loss // 
 
-for (let i = 0; i < finances.length; i++){
+for (var i = 0; i < finances.length; i++){
     net_Profit_or_Loss += finances[i][1]; // this function makes a sum of all the profit/losses per month //
 
 }
 
 console.log( "Total Net Profit/Loss: " + "£" + net_Profit_or_Loss) // console will dispplay total net profit or loss //
+
+var change = []
+var totalChange
+
+/*for (var i = finances[1].length; i >= 0 ; i--){
+    change = finances[i+1][1] - finances[i][1]
+    
+}
+
+console.log(change)
+console.log(totalChange) */
+
+
+for (var i =0; i < finances[1].length; i++){
+    change = finances[i][1] - (finances[i+1][1]) / finances.length
+}
+
+console.log(change) 
+
+totalChange = change/finances.length
+
+console.log(totalChange)
 
