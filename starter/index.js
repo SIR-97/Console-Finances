@@ -101,25 +101,34 @@ for (var i = 0; i < finances.length; i++){
 
 console.log( "Total Net Profit/Loss: " + "£" + net_Profit_or_Loss) // console will dispplay total net profit or loss //
 
-var change = []
-var totalChange
+var final
+var initial
+var change 
 
-/*for (var i = finances[1].length; i >= 0 ; i--){
-    change = finances[i+1][1] - finances[i][1]
+/* for (var i = finances[1].length; i >= 0 ; i++){
+    change = finances[i][1] - finances[i+1][1]
     
 }
 
 console.log(change)
-console.log(totalChange) */
+*/
 
 
-for (var i =0; i < finances[1].length; i++){
-    change = finances[i][1] - (finances[i+1][1]) / finances.length
+for (var i = 0; i < finances.length - 1; i++){
+    initial = finances[i][1] 
 }
 
-console.log(change) 
+for (var i = 0; i < finances.length; i++){
+    final = finances[i][1] 
 
-totalChange = change/finances.length
+    change += final[i] - initial[i]
 
-console.log(totalChange)
+}
 
+
+
+
+
+console.log(final)
+console.log(initial)
+console.log(change)
