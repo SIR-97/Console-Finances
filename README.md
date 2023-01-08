@@ -12,7 +12,7 @@ For this challenge I utilised basic skills from what we learnt about JavaScript 
 
  - The greatest decrease in losses (date and amount) over the entire period.
 
-Link to deployed my application: 
+Link to deployed my application: https://sir-97.github.io/Console-Finances/ 
 
 <img width="959" alt="image" src="https://user-images.githubusercontent.com/119041506/211203154-d82b7452-c4d7-48f5-b521-b1f836401ef8.png">
 
