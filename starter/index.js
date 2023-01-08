@@ -101,34 +101,46 @@ for (var i = 0; i < finances.length; i++){
 
 console.log( "Total Net Profit/Loss: " + "£" + net_Profit_or_Loss) // console will dispplay total net profit or loss //
 
-var final
-var initial
-var change 
+// reversing the dates and seperating the array values will make it easier to determine the average changes in amounts between the months //
 
-/* for (var i = finances[1].length; i >= 0 ; i++){
-    change = finances[i][1] - finances[i+1][1]
-    
-}
+var reverseDate = [];        //An array to store the reversed dates //
 
-console.log(change)
-*/
+var reverseAmounts = [];      //An array for the reversed amount values for each month //
 
+//I  formed a loop to reverse the order of the financial amount array and extract the data seperately //
 
-for (var i = 0; i < finances.length - 1; i++){
-    initial = finances[i][1] 
-}
+for (let i = finances.length - 1; i >= 0; i--) {
 
-for (var i = 0; i < finances.length; i++){
-    final = finances[i][1] 
+      const[date, amount] = finances[i];        //Split the data in the finance array //
 
-    change += final[i] - initial[i]
+      //confirmed the split arrays //
+      //console.log(date);// 
+     // console.log(amount);//
 
-}
+    reverseDate.push(date);           //Pushed the extracted date data to the empty  reverseDate array to return new length //
 
+    reverseAmounts.push(amount);      //Pushed the extracted date data to the empty  reverseDate array to return new length //
 
+    }
 
+    //confirmed the new arrays//
 
+    //console.log(reverseDate);//
+   // console.log(reverseAmounts); //
 
-console.log(final)
-console.log(initial)
-console.log(change)
+   var avgChanges =[]            // Made array for the average changes //
+
+   var total_avg_changes = 0       // made variable for the total average changes //
+ 
+   // Use a for loop to calulate the monthly difference followed by their total sum //
+   for (let i = 0; i < finances.length - 1; i++) {
+ 
+     avgChanges.push(reverseAmounts[i] - reverseAmounts[i+1]);     // Pushed the calculated differences to the avgChanges array that I created earlier //
+   
+     total_avg_changes += avgChanges[i];       //  this will complete the Sum the amounts of the newly created avgChanges array //
+   }
+ 
+   // Confirmed that the avgChanges array was filled //
+  // console.log(avgChanges); //
+  
+ 
