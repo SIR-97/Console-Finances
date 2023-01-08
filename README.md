@@ -14,5 +14,5 @@ For this challenge I utilised basic skills from what we learnt about JavaScript 
 
 Link to deployed my application: 
 
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/119041506/211202998-f7e62f64-d795-4f25-ace9-c8017cf77505.png">
+<img width="959" alt="image" src="https://user-images.githubusercontent.com/119041506/211203154-d82b7452-c4d7-48f5-b521-b1f836401ef8.png">
 
