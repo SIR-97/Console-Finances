@@ -87,39 +87,39 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-console.log("Financial Analysis") // Added heading for the my financial analysis //
+console.log("Financial Analysis")        // Added heading for the my financial analysis //
 console.log("--------------------")
 
-console.log("Total Months: " + finances.length)  // Total numbers of months is equal to length of the array // 
+console.log("Total Months: " + finances.length)             // Total numbers of months is equal to length of the array // 
 
-var net_Profit_or_Loss = 0; // I created a variable for the net profit or loss // 
+var net_Profit_or_Loss = 0;           // I created a variable for the net profit or loss // 
 
 for (var i = 0; i < finances.length; i++){
-    net_Profit_or_Loss += finances[i][1]; // this function makes a sum of all the profit/losses per month //
+    net_Profit_or_Loss += finances[i][1];            // this function makes a sum of all the profit/losses per month //
 
 }
 
-console.log( "Total Net Profit/Loss: " + "£" + net_Profit_or_Loss) // console will dispplay total net profit or loss //
+console.log( "Total Net Profit/Loss: " + "£" + net_Profit_or_Loss)      // console will dispplay total net profit or loss //
 
 // reversing the dates and seperating the array values will make it easier to determine the average changes in amounts between the months //
 
-var reverseDate = [];        //An array to store the reversed dates //
+var reverseDate = [];     //An array to store the reversed dates //
 
-var reverseAmounts = [];      //An array for the reversed amount values for each month //
+var reverseAmounts = [];   //An array for the reversed amount values for each month //
 
 //I  formed a loop to reverse the order of the financial amount array and extract the data seperately //
 
 for (let i = finances.length - 1; i >= 0; i--) {
 
-      const[date, amount] = finances[i];        //Split the data in the finance array //
+      const[date, amount] = finances[i];    //Split the data in the finance array //
 
       //confirmed the split arrays //
       //console.log(date);// 
      // console.log(amount);//
 
-    reverseDate.push(date);           //Pushed the extracted date data to the empty  reverseDate array to return new length //
+    reverseDate.push(date);       //Pushed the extracted date data to the empty  reverseDate array to return new length //
 
-    reverseAmounts.push(amount);      //Pushed the extracted date data to the empty  reverseDate array to return new length //
+    reverseAmounts.push(amount);    //Pushed the extracted date data to the empty  reverseDate array to return new length //
 
     }
 
@@ -128,9 +128,9 @@ for (let i = finances.length - 1; i >= 0; i--) {
     //console.log(reverseDate);//
    // console.log(reverseAmounts); //
 
-   var avgChanges =[]            // Made array for the average changes //
+   var avgChanges =[]        // Made array for the average changes //
 
-   var total_avg_changes = 0       // made variable for the total average changes //
+   var total_avg_changes = 0     // made variable for the total average changes //
  
    // Use a for loop to calulate the monthly difference followed by their total sum //
    for (let i = 0; i < finances.length - 1; i++) {
@@ -143,4 +143,28 @@ for (let i = finances.length - 1; i >= 0; i--) {
    // Confirmed that the avgChanges array was filled //
   // console.log(avgChanges); //
   
- 
+  var total_avg_profit_loss = total_avg_changes / avgChanges.length;         //Made a variable for the total average profit/loss using this calculation //
+
+  console.log("Average change: " + "£" + total_avg_profit_loss.toFixed(2));        // Displayed the total average change in profit/loss to 2 decimal points //
+
+  var greatest_profit_amount = Math.max(...avgChanges);       // made a variable and utilised  the math.max to find the highest value from the avgChanges array created earlier //
+
+  // Check to see where the highest change is obtained
+  
+  //console.log("The greatest increase in profits is at index " + avgChanges.indexOf(greatest_profit_amount));
+
+ var greatest_profit_date = reverseDate[60];        // made this variable and retrieved the date at the same index from the reverseDate Array that I made earlier // 
+
+ console.log("Greatest increase in profits: " + greatest_profit_date + " (£"+ greatest_profit_amount + ")")        // Displayed the greatest increase in profits over the entire gittime period //
+
+ // use simmilar method to obtain the greatest loss over period using  new variables and math.min //
+  
+ var greatest_loss_amount = Math.min(...avgChanges);       // made a variable and utilised  the math.min to find the lowest value from the avgChanges array created earlier //
+
+   // Check to see where the lowest change is obtained //
+  
+  //console.log("The greatest loss is at index " + avgChanges.indexOf(greatest_profit_amount));
+
+ var greatest_loss_date = reverseDate[41];        // made this variable and retrieved the date at the same index from the reverseDate Array that I made earlier // 
+
+ console.log("Greatest Decrease in Profits: " + greatest_loss_date + " (£"+ greatest_loss_amount + ")")        // Displayed the greatest decrease in profits over the entire time period //
